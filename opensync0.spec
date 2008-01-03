@@ -22,7 +22,7 @@ BuildRequires: sqlite3-devel
 BuildRequires: pkgconfig
 BuildRequires: swig
 BuildRequires: autoconf
-Conflicts: %{libname} < 0.22-6
+Conflicts: %{mklibname opensync 0} < 0.22-6
 Conflicts: libopensync >= 0.30
 
 %description

@@ -6,7 +6,7 @@
 
 Name: opensync0
 Version: 0.22
-Release: %mkrel 5
+Release: %mkrel 6
 Summary: Multi-platform PIM synchronization framework
 Source: http://www.opensync.org/download/releases/%version/libopensync-%version.tar.bz2
 Patch: libopensync-python-lib-check-lib64.patch
@@ -22,6 +22,8 @@ BuildRequires: sqlite3-devel
 BuildRequires: pkgconfig
 BuildRequires: swig
 BuildRequires: autoconf
+Conflicts: %{libname} < 0.22-6
+Conflicts: libopensync >= 0.30
 
 %description
 OpenSync is a synchronization framework that is platform and distribution
@@ -30,6 +32,10 @@ devices, a powerful sync-engine and the framework itself.  The synchronization
 framework is kept very flexible and is capable of synchronizing any type of
 data, including contacts, calendar, tasks, notes and files.
 
+%files
+%defattr(-,root,root)
+%{_bindir}/*
+
 #-------------------------------------------------------------
 
 %define libname %mklibname opensync 0
@@ -37,7 +43,6 @@ data, including contacts, calendar, tasks, notes and files.
 %package -n %{libname}
 Summary: Dynamic libraries from %name
 Group: System/Libraries
-Conflicts: libopensync >= 0.30
 
 %description -n %{libname}
 Dynamic libraries from %name.
@@ -47,7 +52,6 @@ Dynamic libraries from %name.
 
 %files -n %{libname}
 %defattr(-,root,root)
-%{_bindir}/*
 %{_libdir}/opensync
 %{_libdir}/osplugin
 %{_libdir}/*.so.*
@@ -61,6 +65,7 @@ Summary: Header files and static libraries from %name
 Group: Development/C
 Requires: %{libname} = %{version}
 Provides: %name-devel = %version
+Conflicts: %{mklibname -d opensync} >= 0.30
 
 %description -n %{develname}
 Libraries and includes files for developing programs based on %name.

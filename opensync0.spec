@@ -6,7 +6,7 @@
 
 Name: opensync0
 Version: 0.22
-Release: %mkrel 6
+Release: %mkrel 8
 Summary: Multi-platform PIM synchronization framework
 Source: http://www.opensync.org/download/releases/%version/libopensync-%version.tar.bz2
 Patch: libopensync-python-lib-check-lib64.patch

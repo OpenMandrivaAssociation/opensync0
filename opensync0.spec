@@ -10,7 +10,7 @@ Release: %mkrel 9
 Summary: Multi-platform PIM synchronization framework
 Source: http://www.opensync.org/download/releases/%version/libopensync-%version.tar.bz2
 Patch: libopensync-python-lib-check-lib64.patch
-URL: http://www.opensync.org/
+URL: https://www.opensync.org/
 License: GPLv2+
 Group: System/Libraries
 BuildRoot: %{_tmppath}/%{name}-buildroot

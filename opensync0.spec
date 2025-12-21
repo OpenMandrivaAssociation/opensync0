@@ -14,6 +14,10 @@ URL: https://www.opensync.org/
 License: GPLv2+
 Group: System/Libraries
 BuildRoot: %{_tmppath}/%{name}-buildroot
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: bison 
 BuildRequires: libxml2-devel 
 BuildRequires: chrpath
